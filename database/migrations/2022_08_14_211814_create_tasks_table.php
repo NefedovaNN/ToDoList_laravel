@@ -18,14 +18,17 @@ class CreateTasksTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->unsignedSmallInteger('importance')->nullable();
-
+            
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('status_id');
-
+            
             $table->index('category_id', 'task_category_idx');
             $table->index('status_id', 'task_status_idx');
+            $table->index('user_id', 'tas_user_idx');
             $table->foreign('category_id', 'task_category_fk')->on('categories')->references('id');
             $table->foreign('status_id', 'task_status_fk')->on('statuses')->references('id');
+            $table->foreign('user_id', 'task_user_fk')->on('users')->references('id');
             
             $table->timestamps();
         });

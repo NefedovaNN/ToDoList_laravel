@@ -8,25 +8,25 @@
     <title>To Do List</title>
 </head>
 <body>
+  <div class="row mb-5">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('main.index')}}">Мой профиль</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('task.index')}}">Мои задачи</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+         
+        </nav>
+  </div>
     <div class="container">
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('personal.main.index')}}">Кабинет пользователя</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('personal.task.index')}}">Задачи</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.main.index')}}">Администратор</a>
-                      </li>
-                    </ul>
-                  </div>
-               
-              </nav>
-        </div>
+       
         
         @yield('content')
     

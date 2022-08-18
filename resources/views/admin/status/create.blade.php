@@ -9,6 +9,9 @@
             <div class="form-group w-50">
               <input type="text" class="form-control mb-3" name="title" placeholder="Новый статус">
             </div>
+            @error('title')
+              <p class="text-danger">{{$message}}</p>
+            @enderror
             <button type="submit" class="btn btn-primary">Добавить</button>
           </form>
 </div>

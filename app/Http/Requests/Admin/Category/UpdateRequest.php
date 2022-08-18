@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,14 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-           'title' => 'required|string'
+            'title' => 'required|string'
         ];
     }
     public function messages()
     {
         return [
-            'title.required' => 'Это поле необходимо заполнить',
-            'title.string' => 'Название должно быть строкой',
+            'title|required' => 'Это поле необходимо заполнить',
+            'title|string' => 'Название должно быть строкой',
         ];
     }
 }

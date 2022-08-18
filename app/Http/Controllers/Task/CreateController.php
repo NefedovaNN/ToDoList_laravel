@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Task;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
     public function __invoke()
     {
-        
-        return view('admin.category.create');
+        $categories = Category::all();
+        return view('task.create', compact('categories'));
     }
 }

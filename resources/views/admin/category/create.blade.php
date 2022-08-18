@@ -10,6 +10,9 @@
               <label for="title">Введите название категории: </label>
               <input type="text" class="form-control mb-3" name="title" placeholder="Название категории">
             </div>
+            @error('title')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
             <button type="submit" class="btn btn-primary">Добавить</button>
           </form>
 </div>

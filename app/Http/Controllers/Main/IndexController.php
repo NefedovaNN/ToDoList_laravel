@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Main;
+namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Status;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -14,9 +13,6 @@ class IndexController extends Controller
     {
         $data = [];
         $data['taskCount'] = auth()->user()->tasks->count();
-        $data['categoryCount'] = Category::all()->count();
-        $data['statusCount'] = Status::all()->count();
-        $data['userCount'] = User::all()->count();
-        return view('admin.main.index', compact('data'));
+        return view('main.index', compact('data'));
     }
 }
