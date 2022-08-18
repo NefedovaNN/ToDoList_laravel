@@ -1,6 +1,14 @@
 @extends('layouts.main.index')
 
 @section('content')
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('main.index')}}">Личный кабинет</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Задачи</a>
+    </li>
+  </ul>
     <div class="row">
         <h3>Задачи</h3>
     </div>

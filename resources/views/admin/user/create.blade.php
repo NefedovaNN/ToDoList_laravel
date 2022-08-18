@@ -1,6 +1,14 @@
 @extends('layouts.main.index')
 @section('content')
-    <div class="row">
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.user.index') }}">Пользователи</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Новый пользователь</a>
+    </li>
+  </ul>
+    <div class="row mb-5">
         <h3>Добавление пользователя</h3>
     </div>
     <div class="row">

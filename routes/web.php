@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'Main', 'prefix' => 'main'], function(){
+Route::group(['namespace' => 'Main', 'prefix' => 'main', 'middleware' => 'auth'], function(){
     Route::get('/', 'IndexController')->name('main.index');
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::group(['namespace' => 'Main', 'prefix' => 'main'], function(){
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
@@ -56,13 +56,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
    
 });
 
-Route::group(['namespace' => 'Task', 'prefix' => 'task'], function(){
+Route::group(['namespace' => 'Task', 'prefix' => 'task', 'middleware' => 'auth'], function(){
     Route::get('/', 'IndexController')->name('task.index');
     Route::get('/create', 'CreateController')->name('task.create');
     Route::post('/', 'StoreController')->name('task.store');
     Route::get('/{task}/edit', 'EditController')->name('task.edit');
     Route::patch('/{task}', 'UpdateController')->name('task.update');
     Route::delete('/{task}', 'DeleteController')->name('task.delete');
+});
+Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => 'auth'], function(){
+    Route::get('/', 'IndexController')->name('personal.index');
+    Route::get('/{user}/edit', 'EditController')->name('personal.edit');
+    Route::patch('/{user}', 'UpdateController')->name('personal.update');
 });
 
 Auth::routes();

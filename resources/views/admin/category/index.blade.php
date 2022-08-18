@@ -1,5 +1,13 @@
 @extends('layouts.main.index')
 @section('content')
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.main.index') }}">Админка</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Категории</a>
+    </li>
+</ul>
     <div class="row mb-5">
         <h3>Список категорий:</h3>
     </div>

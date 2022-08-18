@@ -1,5 +1,13 @@
 @extends('layouts.main.index')
 @section('content')
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('task.index')}}">Задачи</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Новая задача</a>
+    </li>
+  </ul>
     <div class="row">
         <h3>Добавление задачи</h3>
     </div>

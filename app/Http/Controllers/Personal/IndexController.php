@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Main;
+namespace App\Http\Controllers\Personal;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Status;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        $data = [];
-        $data['taskCount'] = auth()->user()->tasks->count();
+       
+        $user = auth()->user();
         
-        return view('main.index', compact('data'));
+        return view('personal.index', compact('user'));
     }
 }
