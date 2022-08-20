@@ -13,6 +13,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $user->update($data);
-        return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index')->with('msg', 'Пользователь изменен!');
     }
 }

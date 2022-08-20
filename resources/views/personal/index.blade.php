@@ -8,10 +8,11 @@
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Профиль пользователя</a>
     </li>
   </ul>
-    <div class="row mb-5">
+ 
+    <div class="row mb-5 ">
         <h3>Профиль пользователя</h3>
     </div>
-
+    @include('partials.notifications')
     <div class="row w-50 ">
         <table class="table table-bordered table table-hover">
             <thead>
@@ -28,7 +29,8 @@
 
             </tbody>
         </table>
-        <a href="{{route('personal.edit', $user->id)}}" class="btn btn-secondary">Изменить</a>
+        
 
     </div>
+    <div class="row-25"><a href="{{route('personal.edit', $user->id)}}" class="btn btn-secondary">Редактировать</a></div>
 @endsection

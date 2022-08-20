@@ -13,6 +13,6 @@ class StoreController extends Controller
     {
         $data = $request->validated();
         Status::firstOrCreate($data);
-        return redirect()->route('admin.status.index');
+        return redirect()->route('admin.status.index')->with('msg', 'Статус добавлен!');
     }
 }

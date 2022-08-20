@@ -14,6 +14,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $category->update($data);
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.category.index')->with('msg', 'Категория изменена!');
     }
 }

@@ -14,6 +14,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $user->update($data);
-        return redirect()->route('personal.index');
+        return redirect()->route('personal.index')->with('msg', 'Профиль успешно изменен!');
     }
 }

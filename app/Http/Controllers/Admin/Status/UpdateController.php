@@ -13,6 +13,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $status->update($data);
-        return redirect()->route('admin.status.index');
+        return redirect()->route('admin.status.index')->with('msg', 'Статус изменен!');
     }
 }

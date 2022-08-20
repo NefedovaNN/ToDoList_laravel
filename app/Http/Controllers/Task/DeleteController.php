@@ -12,6 +12,6 @@ class DeleteController extends Controller
     public function __invoke(Task $task)
     {
         $task->delete();
-        return redirect()->route('task.index');
+        return redirect()->route('task.index')->with('deleted', 'Задача успешно удалена!');
     }
 }

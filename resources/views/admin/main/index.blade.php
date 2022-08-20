@@ -21,7 +21,7 @@
                     <h5 class="card-title">Информация обо мне</h5>
                 </div>
                 <div class="card-footer">
-                    <p class="card-text"><a href="{{ route('task.index') }}" class="nav-link">Подробнее</a></p>
+                    <p class="card-text"><a href="{{ route('personal.index') }}" class="nav-link">Подробнее</a></p>
                 </div>
             </div>
         </div>

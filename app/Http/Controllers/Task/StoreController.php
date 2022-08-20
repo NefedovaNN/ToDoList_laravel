@@ -14,6 +14,6 @@ class StoreController extends Controller
         $data = $request->validated();
         $data['user_id'] = auth()->user()->id;
         Task::create($data);
-        return redirect()->route('task.index')->with('success', 'Задача добавлена!');
+        return redirect()->route('task.index')->with('msg', 'Задача добавлена!');
     }
 }

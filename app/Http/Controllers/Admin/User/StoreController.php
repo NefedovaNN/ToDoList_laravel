@@ -16,6 +16,6 @@ class StoreController extends Controller
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
         User::firstOrCreate($data);
-        return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index')->with('msg', 'Пользователь добавлен!');
     }
 }

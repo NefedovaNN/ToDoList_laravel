@@ -17,6 +17,6 @@ class UpdateController extends Controller
             $data['importance'] = 0;
         }
         $task->update($data);
-        return redirect()->route('task.index');
+        return redirect()->route('task.index')->with('msg', 'Задача изменена!');
     }
 }

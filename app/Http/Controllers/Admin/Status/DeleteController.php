@@ -11,6 +11,6 @@ class DeleteController extends Controller
     public function __invoke(Status $status)
     {
         $status->delete();
-        return redirect()->route('admin.status.index');
+        return redirect()->route('admin.status.index')->with('deleted', 'Статус успешно удален!');
     }
 }
